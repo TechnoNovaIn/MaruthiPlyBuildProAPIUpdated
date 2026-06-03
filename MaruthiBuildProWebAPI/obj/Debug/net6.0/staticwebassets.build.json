@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "I1h3XqjWReUs1OhD6UtyFg43CZcj7NpZ+8S7gs2+XDY=",
+  "Source": "MaruthiBuildProWebAPI",
+  "BasePath": "_content/MaruthiBuildProWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,189 @@
+[
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Barcode",
+    "Method": "ParseXmlResponse",
+    "RelativePath": "api/Barcode/GetProductDetails/{ItemCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ItemCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Barcode",
+    "Method": "GetProductDetailsOnAlias",
+    "RelativePath": "api/Barcode/GetProductDetailsOnAlias/{Alias}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Alias",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Party",
+    "Method": "ParseXmlResponse",
+    "RelativePath": "api/Party",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "AddLedger",
+    "RelativePath": "api/Products/add-ledger",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ledger",
+        "Type": "MaruthiBuildProWebAPI.Controllers.Products\u002BLedgerModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "GetCompanyData",
+    "RelativePath": "api/Products/company",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "ParseProductXmlResponse",
+    "RelativePath": "api/Products/GetMasterProducts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "GetProductDetailsOnAlias",
+    "RelativePath": "api/Products/GetProductDetails/{Alias}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Alias",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "ParseXmlResponse",
+    "RelativePath": "api/Products/GetProductMRP/{ItemCode}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ItemCode",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "GetLedgerBankAccounts",
+    "RelativePath": "api/Products/ledger-bank-accounts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "GetLedgerSundryDebtors",
+    "RelativePath": "api/Products/ledger-sundry-debtors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.Products",
+    "Method": "GetStockItems",
+    "RelativePath": "api/Products/stock-items",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.SaleOrderEstimate",
+    "Method": "Post",
+    "RelativePath": "api/SaleOrderEstimate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderDataList",
+        "Type": "System.Collections.Generic.List\u00601[[MaruthiBuildProWebAPI.Controllers.SaleOrderEstimate\u002BOrderData, MaruthiBuildProWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MaruthiBuildProWebAPI.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MaruthiBuildProWebAPI.WeatherForecast, MaruthiBuildProWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
