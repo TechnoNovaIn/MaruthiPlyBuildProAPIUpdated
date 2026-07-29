@@ -320,7 +320,7 @@ namespace MaruthiBuildProWebAPI.Controllers
             //Read and Fetch Current Company from FetchFromTally Method
             string currentCompany = ExtractAndPrintCurrentCompany(company);
 
-            string connectionString = "Data Source=65.0.33.12;Initial Catalog=Maruthi_Ply;Persist Security Info=True;User ID=user;Password=Raghu@1976;";
+            string connectionString = "Data Source=35.207.234.121;Initial Catalog=Maruthi_Ply;Persist Security Info=True;User ID=user;Password=Mk@5942;";
 
             DataTable OrderTable = new DataTable();
 
@@ -484,7 +484,7 @@ namespace MaruthiBuildProWebAPI.Controllers
         <OLDAUDITENTRYIDS.LIST TYPE=""Number"">
          <OLDAUDITENTRYIDS>-1</OLDAUDITENTRYIDS>
         </OLDAUDITENTRYIDS.LIST>
-        <LEDGERNAME>Sales</LEDGERNAME>
+        <LEDGERNAME>Cash Upi Sales</LEDGERNAME>
         <GSTCLASS>&#4; Not Applicable</GSTCLASS>
         <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
         <LEDGERFROMITEM>No</LEDGERFROMITEM>
@@ -563,7 +563,7 @@ namespace MaruthiBuildProWebAPI.Controllers
 
                         string CombinedItemList = string.Join("", ItemArray.ToArray());
 
-                        var result = sendRequestToTally(CombinedItemList, currentCompany, SumofItemAmt, OrderID, Party_Name, "Sales Order", Date, GSTIN, TotalSGSTAmt, TotalCGSTAmt);
+                        var result = sendRequestToTally(CombinedItemList, currentCompany, SumofItemAmt, OrderID, Party_Name, "MBP TECNO", Date, GSTIN, TotalSGSTAmt, TotalCGSTAmt);
 
                         var xml = XDocument.Parse(result);
                         var created = (int?)xml.Root.Element("CREATED") ?? 0;
@@ -655,32 +655,32 @@ namespace MaruthiBuildProWebAPI.Controllers
             switch (location)
             {
                 case "AMARAPURA":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 case "Chikkamangalore":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 case "HASSAN":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 //case "HIRIYUR& SIRA":
                 //    return "Tamil Nadu";
                 case "KUNIGAL":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 //case "NELAMANGALA":
                 //    return "Delhi";
                 //case "PAVAGADA, BANGALORE":
                 //    return "Delhi";
                 case "TIPTUR":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 case "TUMKUR EAST":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 //case "TUMKUR RE":
                 //    return "Delhi";
                 case "TUMKUR WEST":
-                    return "Sales Order";
+                    return "MBP TECNO";
                 case "MADHIGIRI":
-                    return "Sales Order";
+                    return "MBP TECNO";
 
                 default:
-                    return "Sales Order";
+                    return "MBP TECNO";
             }
         }
 
@@ -1007,7 +1007,7 @@ namespace MaruthiBuildProWebAPI.Controllers
        </OLDAUDITENTRYIDS.LIST>
        <APPROPRIATEFOR>&#4; Not Applicable</APPROPRIATEFOR>
        <ROUNDTYPE>&#4; Not Applicable</ROUNDTYPE>
-       <LEDGERNAME>Cgst</LEDGERNAME>
+       <LEDGERNAME>OUTPUT CGST 9%</LEDGERNAME>
        <GSTCLASS>&#4; Not Applicable</GSTCLASS>
        <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
        <LEDGERFROMITEM>No</LEDGERFROMITEM>
@@ -1056,7 +1056,7 @@ namespace MaruthiBuildProWebAPI.Controllers
        </OLDAUDITENTRYIDS.LIST>
        <APPROPRIATEFOR>&#4; Not Applicable</APPROPRIATEFOR>
        <ROUNDTYPE>&#4; Not Applicable</ROUNDTYPE>
-       <LEDGERNAME>Sgst</LEDGERNAME>
+       <LEDGERNAME>OUTPUT SGST 9%</LEDGERNAME>
        <GSTCLASS>&#4; Not Applicable</GSTCLASS>
        <ISDEEMEDPOSITIVE>No</ISDEEMEDPOSITIVE>
        <LEDGERFROMITEM>No</LEDGERFROMITEM>

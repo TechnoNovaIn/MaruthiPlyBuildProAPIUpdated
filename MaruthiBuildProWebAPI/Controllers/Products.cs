@@ -313,47 +313,47 @@ namespace MaruthiBuildProWebAPI.Controllers
         [HttpGet("GetMasterProducts")]
         public IActionResult ParseProductXmlResponse()
         {
-            return Ok(JsonConvert.SerializeObject(GetMasterStockItems()));
-            //try
-            //{
-            //    string xmlResponse = GetMasterStockItems();
-            //    xmlResponse = Regex.Replace(xmlResponse, @"[^\x20-\x7E]", string.Empty); // Keep only printable ASCII
+            //return Ok(JsonConvert.SerializeObject(GetMasterStockItems()));
+            try
+            {
+                string xmlResponse = GetMasterStockItems();
+                xmlResponse = Regex.Replace(xmlResponse, @"[^\x20-\x7E]", string.Empty); // Keep only printable ASCII
 
-            //    List<object> items = new List<object>();
+                List<object> items = new List<object>();
 
-            //    // Display the results
-            //    XDocument xmlDoc = XDocument.Parse(xmlResponse);
+                // Display the results
+                XDocument xmlDoc = XDocument.Parse(xmlResponse);
 
-            //    // Retrieve and print each row's values
-            //    foreach (var row in xmlDoc.Descendants("ROW"))
-            //    {
-            //        var columns = row.Elements("COL").ToList(); // Convert to a list for easier access
-            //        if (columns.Count >= 2) // Ensure there are at least 2 columns
-            //        {
-            //            var item = new
-            //            {
-            //                ItemName = columns.ElementAt(0).Value,
-            //                ItemAlias = columns.ElementAt(2).Value,
-            //                PartNo = columns.ElementAt(1).Value
+                // Retrieve and print each row's values
+                foreach (var row in xmlDoc.Descendants("ROW"))
+                {
+                    var columns = row.Elements("COL").ToList(); // Convert to a list for easier access
+                    if (columns.Count >= 2) // Ensure there are at least 2 columns
+                    {
+                        var item = new
+                        {
+                            ItemName = columns.ElementAt(0).Value,
+                            ItemAlias = columns.ElementAt(2).Value,
+                            PartNo = columns.ElementAt(1).Value
 
-            //            };
-            //            items.Add(item);
-            //        }
-            //    }
+                        };
+                        items.Add(item);
+                    }
+                }
 
-            //    var result = new
-            //    {
-            //        items,
-            //    };
+                var result = new
+                {
+                    items,
+                };
 
-            //    string JSONresult = JsonConvert.SerializeObject(result);
-            //    return Ok(JSONresult);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Error: " + ex.Message);
-            //    return Ok(JsonConvert.SerializeObject(ex.Message + Environment.NewLine + ex.StackTrace));
-            //} 
+                string JSONresult = JsonConvert.SerializeObject(result);
+                return Ok(JSONresult);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return Ok(JsonConvert.SerializeObject(ex.Message + Environment.NewLine + ex.StackTrace));
+            }
         }
 
         [HttpGet("company")]
