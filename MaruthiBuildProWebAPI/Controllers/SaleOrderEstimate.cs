@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
 using System.Data;
@@ -320,7 +320,7 @@ namespace MaruthiBuildProWebAPI.Controllers
             //Read and Fetch Current Company from FetchFromTally Method
             string currentCompany = ExtractAndPrintCurrentCompany(company);
 
-            string connectionString = "Data Source=35.207.234.121;Initial Catalog=Maruthi_Ply;Persist Security Info=True;User ID=user;Password=Mk@5942;";
+            string connectionString = "Data Source=MARUTHIBUILDPRO\\SQLEXPRESS;Initial Catalog=Maruthi_Ply; User ID=user;Password=MaruthiBuildPro@2026; TrustServerCertificate=True;";
 
             DataTable OrderTable = new DataTable();
 
