@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
 using System.Text;
@@ -40,7 +40,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                                             <REQUESTDESC>
                                                 <REPORTNAME>ODBC Report</REPORTNAME>
                                                 <SQLREQUEST TYPE='General' METHOD='SQLExecute'>
-                                                    select $name as 'ItemName', $Base Units as 'ItemUOM',$MailingName as 'PartNo',$MRPDetails[Last].MRPRateDetails[Last].MRPRate as 'MRP',$_ClosingBalance as 'AvailableQty',$name[2].name as 'ItemCode' from stockitem where $MailingName = '{ItemCode}'
+                                                    select $name as 'ItemName', $Base Units as 'ItemUOM',$MailingName as 'PartNo',$MRPDetails[Last].MRPRateDetails[Last].MRPRate as 'MRP',$_ClosingBalance as 'AvailableQty',$name[2].name as 'ItemCode', $Dis4Itm as 'Discount' from stockitem where $MailingName = '{ItemCode}'
                                                 </SQLREQUEST>
                                                 <STATICVARIABLES>
                                                     <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
@@ -103,6 +103,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                 string AvailableQty = "";
                 string PartNo = "";
                 string ItemAlias = "";
+                string Discount = "";
 
             // Display the results
             XDocument xmlDoc = XDocument.Parse(xmlResponse);
@@ -118,6 +119,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                     ItemAlias = columns.ElementAt(5).Value;
                     AvailableQty = columns.ElementAt(4).Value;
                     PartNo = columns.ElementAt(2).Value;
+                    Discount = columns.ElementAt(6).Value;
 
 
             }
@@ -135,6 +137,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                 PartNo = PartNo,
                 MRP = MRP,
                 AvailableQuantity = AvailableQty,
+                Discount = Discount
             };
 
             string JSONresult;

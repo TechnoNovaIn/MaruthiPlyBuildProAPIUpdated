@@ -85,6 +85,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                         using (SqlCommand cmd = new SqlCommand("InsertSaleOrderEstimate", con))
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.CommandTimeout = 300;
 
                             cmd.Parameters.AddWithValue("@OrderID", orderID);
                             cmd.Parameters.AddWithValue("@Date", orderData.Date);
@@ -320,7 +321,8 @@ namespace MaruthiBuildProWebAPI.Controllers
             //Read and Fetch Current Company from FetchFromTally Method
             string currentCompany = ExtractAndPrintCurrentCompany(company);
 
-            string connectionString = "Data Source=MARUTHIBUILDPRO\\SQLEXPRESS;Initial Catalog=Maruthi_Ply; User ID=user;Password=MaruthiBuildPro@2026; TrustServerCertificate=True;";
+            //string connectionString = "Data Source=MARUTHIBUILDPRO\\SQLEXPRESS;Initial Catalog=Maruthi_Ply; User ID=user;Password=MaruthiBuildPro@2026; TrustServerCertificate=True;";
+            string connectionString = "Data Source=35.207.234.121;Initial Catalog=Maruthi_Ply;Persist Security Info=True;User ID=user;Password=Mk@5942;";
 
             DataTable OrderTable = new DataTable();
 
@@ -576,6 +578,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                         }
                         else
                         {
+                            sendMailWithoutAttachment("Error Details: ", xml.ToString());
                             return status=false; 
                         }
                     }
@@ -617,9 +620,9 @@ namespace MaruthiBuildProWebAPI.Controllers
         private static void sendMailWithoutAttachment(string subject, string body)
         {
             NetworkCredential basicCredential = new NetworkCredential("ppdbalaji@gmail.com", "uxrsfstcesqhkjca");
-            var fromAddress = new MailAddress("ppdbalaji@gmail.com", "Eway Error");
-            var toAddress = new MailAddress("jaga190300@gmail.com", "Jagadeesh R");
-
+            var fromAddress = new MailAddress("ppdbalaji@gmail.com", "Maruthi Build Pro APIs Error");
+            var toAddress = new MailAddress("deeresh@technonova.in", "Deeresh G P");
+            
 
             var smtp = new SmtpClient
             {
@@ -637,6 +640,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                 Subject = subject,
                 Body = body
             };
+            //message.CC.Add("tumkur.smtc@gmail.com");
 
 
 
