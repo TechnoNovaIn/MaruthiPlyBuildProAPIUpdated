@@ -101,6 +101,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                             cmd.Parameters.AddWithValue("@Address", orderData.Address);
                             cmd.Parameters.AddWithValue("@Discount", orderData.Discount);
                             cmd.Parameters.AddWithValue("@ItemAlias", orderData.ItemAlias);
+                            cmd.Parameters.AddWithValue("@Location", orderData.Location);
 
 
                         cmd.ExecuteNonQuery();
@@ -308,7 +309,7 @@ namespace MaruthiBuildProWebAPI.Controllers
 
             public string? ItemAlias { get; set; }
 
-
+            public string? Location { get; set; }
 
         }
 
@@ -429,6 +430,7 @@ namespace MaruthiBuildProWebAPI.Controllers
                             decimal SGST = Convert.ToDecimal(row["SGST"]);
                             decimal CGST = Convert.ToDecimal(row["CGST"]);
                             string Discount = row["Discount"].ToString();
+                            string Location = row["Location"].ToString();
 
 
                             //string ItemRate = row["Rate"].ToString();
@@ -469,6 +471,7 @@ namespace MaruthiBuildProWebAPI.Controllers
        <BILLEDQTY> {itemQty}</BILLEDQTY>
        <INCLVATRATE>{MRPPrice}</INCLVATRATE>
        <BATCHALLOCATIONS.LIST>
+        <GODOWNNAME>{Location}</GODOWNNAME>
         <BATCHNAME>Primary Batch</BATCHNAME>
         <INDENTNO>&#4; Not Applicable</INDENTNO>
         <ORDERNO>{OrderNo}</ORDERNO>
